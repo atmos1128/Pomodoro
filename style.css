@@ -1,0 +1,1308 @@
+@charset "UTF-8";
+* {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+[v-cloak] {
+  display: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #555;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+input[type='radio'] {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+.container {
+  max-width: 1280px;
+  width: 100%;
+  margin: auto;
+  background-color: #FFEDF7;
+  position: relative;
+}
+.container .main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.container .main .nav {
+  width: 35%;
+  height: 100%;
+  background-color: #003164;
+}
+@media screen and (max-width: 980px) {
+  .container .main .nav {
+    width: 30%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .nav {
+    width: 100%;
+    height: 6%;
+    position: absolute;
+  }
+}
+.container .main .nav .menu {
+  width: 36px;
+  height: 100%;
+  float: right;
+  margin-right: 85px;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 767px) {
+  .container .main .nav .menu {
+    width: 100%;
+    float: none;
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+}
+.container .main .nav .menu button.material-icons {
+  margin-top: 48px;
+  font-size: 30px;
+  background-color: #003164;
+  color: #FFFFFF;
+  border: none;
+}
+@media screen and (max-width: 767px) {
+  .container .main .nav .menu button.material-icons {
+    margin: 0;
+  }
+}
+.container .main .nav .menu .pomodoro_title {
+  margin: 376px 0px 48px;
+  font-size: 24px;
+  writing-mode: vertical-lr;
+}
+@media screen and (max-width: 767px) {
+  .container .main .nav .menu .pomodoro_title {
+    margin: 0;
+    writing-mode: inherit;
+    position: absolute;
+    right: 2%;
+  }
+}
+.container .main .body {
+  width: 70%;
+  padding-left: 85px;
+}
+@media screen and (max-width: 767px) {
+  .container .main .body {
+    width: 100%;
+    padding: 0px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .body {
+    padding: 0;
+  }
+}
+.container .main .body .todo_input_container {
+  margin-top: 48px;
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .todo_input_container {
+    width: 100%;
+    margin-top: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .todo_input_container {
+    margin-top: 65px;
+  }
+}
+.container .main .body .todo_input_container .todo_input {
+  width: 450px;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .todo_input_container .todo_input {
+    width: 80%;
+    margin-top: 20px;
+  }
+}
+.container .main .body .todo_input_container .todo_input input {
+  width: 429px;
+  height: 56px;
+  padding-left: 16px;
+  border: none;
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .todo_input_container .todo_input input {
+    width: 100%;
+  }
+}
+.container .main .body .todo_input_container .todo_input ::-webkit-input-placeholder {
+  color: #FF4384;
+  font-size: 16px;
+  font-style: italic;
+}
+.container .main .body .todo_input_container .todo_input button {
+  width: 24px;
+  height: 24px;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  position: absolute;
+  font-size: 24px;
+  border: none;
+  background-color: Transparent;
+  color: #FF4384;
+}
+.container .main .body .todolist_focus {
+  width: 423px;
+  height: 48px;
+  margin-top: 145px;
+}
+@media screen and (max-width: 980px) {
+  .container .main .body .todolist_focus {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .todolist_focus {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .todolist_focus {
+    width: 95%;
+    margin-top: 10%;
+    padding: 0px 10px;
+  }
+}
+.container .main .body .todolist_focus label {
+  display: flex;
+}
+.container .main .body .todolist_focus label .todolist_focusLeft {
+  width: 10.6%;
+  border-radius: 50%;
+  border: 2px solid #003164;
+}
+.container .main .body .todolist_focus label .todolist_focusLeft:after {
+  content: " ";
+  width: 30px;
+  height: 30px;
+  background-color: #003164;
+  border-radius: 100%;
+  color: transparent;
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .todolist_focus label .todolist_focusLeft:after {
+    width: 25px;
+    height: 25px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .container .main .body .todolist_focus label .todolist_focusLeft {
+    width: 40px;
+    height: 40px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .todolist_focus label .todolist_focusLeft {
+    width: 35px;
+    height: 30px;
+  }
+}
+.container .main .body .todolist_focus label input[type="radio"]:checked + .todolist_focusLeft {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main .body .todolist_focus label input[type="radio"]:checked + .todolist_focusLeft:after {
+  color: #003164;
+}
+.container .main .body .todolist_focus label .todolist_focusRight {
+  width: 89%;
+  height: 48px;
+  padding-left: 16px;
+}
+.container .main .body .todolist_focus label .todolist_focusRight .focusRight_top {
+  width: 100%;
+  height: 58%;
+  font-size: 24px;
+  color: #003164;
+  margin-bottom: 5px;
+}
+.container .main .body .todolist_focus label .todolist_focusRight .focusRight_bottom span {
+  font-size: 30px;
+  color: #FF4384;
+}
+.container .main .body .timer {
+  width: 423px;
+  height: 206px;
+  color: #FF4384;
+  position: relative;
+}
+@media screen and (max-width: 980px) {
+  .container .main .body .timer {
+    width: 35%;
+    height: 150px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .timer {
+    padding-left: 50px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .timer {
+    width: 100%;
+    margin-bottom: 320px;
+    padding: 0px;
+    display: flex;
+    justify-content: center;
+  }
+}
+.container .main .body .timer .workspan, .container .main .body .timer .restspan {
+  font-size: 176px;
+}
+@media screen and (max-width: 1024px) {
+  .container .main .body .timer .workspan, .container .main .body .timer .restspan {
+    font-size: 150px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .container .main .body .timer .workspan, .container .main .body .timer .restspan {
+    font-size: 120px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .timer .workspan, .container .main .body .timer .restspan {
+    font-size: 100px;
+  }
+}
+.container .main .body .timer .restspan {
+  color: #00A7FF;
+}
+.container .main .body .timer .completebtn {
+  position: absolute;
+  bottom: 0;
+  border: #FF4384 2px solid;
+  background-color: #FFFFFF;
+  color: #FF4384;
+}
+@media screen and (max-width: 1024px) {
+  .container .main .body .timer .completebtn {
+    right: 10%;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .timer .completebtn {
+    left: 20%;
+  }
+}
+.container .main .body .main_todo {
+  width: 423px;
+  height: 142.5px;
+  margin-bottom: 48px;
+  position: relative;
+  margin-bottom: 48px;
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .main_todo {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .main_todo {
+    height: auto;
+  }
+}
+.container .main .body .main_todo .todolist {
+  width: 100%;
+  height: 114px;
+  margin-top: 110px;
+  overflow: hidden;
+}
+@media screen and (max-width: 767px) {
+  .container .main .body .main_todo .todolist {
+    width: 95%;
+    padding: 0px 10px;
+  }
+}
+.container .main .body .main_todo .todolist .todolist_text {
+  height: 32px;
+  margin-bottom: 9px;
+  border-bottom: 1px solid #999;
+  position: relative;
+}
+.container .main .body .main_todo .todolist .todolist_text label {
+  display: flex;
+}
+.container .main .body .main_todo .todolist .todolist_text label .todolist_text_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #003164;
+  margin-right: 4px;
+}
+.container .main .body .main_todo .todolist .todolist_text label .todolist_text_circle:after {
+  content: " ";
+  width: 14px;
+  height: 14px;
+  background-color: #003164;
+  border-radius: 100%;
+  color: transparent;
+}
+.container .main .body .main_todo .todolist .todolist_text label input[type="radio"]:checked + .todolist_text_circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .main .body .main_todo .todolist .todolist_text label input[type="radio"]:checked + .todolist_text_circle:after {
+  color: #003164;
+}
+.container .main .body .main_todo .todolist .todolist_text button {
+  position: absolute;
+  right: 5%;
+  border: none;
+  background-color: Transparent;
+}
+@media screen and (max-width: 480px) {
+  .container .main .body .main_todo .todolist .todolist_text button {
+    right: 2%;
+    bottom: 0;
+  }
+}
+.container .main .body .main_todo .todolist_btn #more {
+  position: absolute;
+  right: 5%;
+  border: none;
+  font-size: 16px;
+  color: #FF4384;
+  background-color: Transparent;
+}
+.container .main .paly_container {
+  position: absolute;
+  width: 540px;
+  height: 540px;
+  border-radius: 100%;
+  border: 4px solid #FF4384;
+  top: 130px;
+  right: 160px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 1240px) {
+  .container .main .paly_container {
+    width: 450px;
+    height: 450px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .container .main .paly_container {
+    width: 350px;
+    height: 350px;
+    top: 200px;
+  }
+}
+@media screen and (max-width: 980px) {
+  .container .main .paly_container {
+    width: 300px;
+    height: 300px;
+    top: 245px;
+    right: 100px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .main .paly_container {
+    width: 250px;
+    height: 250px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container .main .paly_container {
+    right: 30px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .main .paly_container {
+    top: 390px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+.container .main .paly_container .paly_box, .container .main .paly_container .rest_box {
+  width: 95%;
+  height: 95%;
+  background-color: #FF4384;
+  border-radius: 100%;
+  position: relative1;
+}
+.container .main .paly_container .paly_box #playbtn, .container .main .paly_container .paly_box #rest_playbtn, .container .main .paly_container .rest_box #playbtn, .container .main .paly_container .rest_box #rest_playbtn {
+  width: 96px;
+  height: 96px;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: none;
+}
+.container .main .paly_container .paly_box #playbtn .start, .container .main .paly_container .paly_box #rest_playbtn .start, .container .main .paly_container .rest_box #playbtn .start, .container .main .paly_container .rest_box #rest_playbtn .start {
+  left: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 0;
+  border-color: transparent transparent transparent #FF4384;
+  border-style: solid solid solid solid;
+  border-width: 25px;
+  position: absolute;
+}
+.container .main .paly_container .paly_box #stopbtn, .container .main .paly_container .paly_box #rest_stopbtn, .container .main .paly_container .rest_box #stopbtn, .container .main .paly_container .rest_box #rest_stopbtn {
+  width: 96px;
+  height: 96px;
+  background-color: #FF4384;
+  border-radius: 100%;
+  position: relative;
+  border: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.container .main .paly_container .paly_box #stopbtn .fas.fa-stop, .container .main .paly_container .paly_box #rest_stopbtn .fas.fa-stop, .container .main .paly_container .rest_box #stopbtn .fas.fa-stop, .container .main .paly_container .rest_box #rest_stopbtn .fas.fa-stop {
+  font-size: 30px;
+  color: #FFFFFF;
+}
+.container .main .paly_container .rest_box {
+  background-color: #00A7FF;
+  display: none;
+}
+.container .main .paly_container .rest_box #rest_playbtn .start {
+  border-color: transparent transparent transparent #00A7FF;
+}
+.container .main .paly_container .rest_box #rest_stopbtn {
+  background-color: #FFFFFF;
+}
+.container .main .paly_container .rest_box #rest_stopbtn .fas.fa-stop {
+  color: #00A7FF;
+}
+.container .Pagination_container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #003164;
+  display: none;
+}
+.container .Pagination_container .Pagination_box {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box {
+    flex-direction: column;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_right {
+  float: right;
+  width: 10%;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_right {
+    position: absolute;
+    height: 40px;
+    right: 0;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_right .fas.fa-times {
+  font-size: 30px;
+  margin-top: 48px;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_right .fas.fa-times {
+    position: absolute;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container .Pagination_container .Pagination_box .Pagination_right .fas.fa-times {
+    margin-top: 10px;
+    right: 10px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_right span {
+  margin-top: 500px;
+  font-size: 24px;
+  writing-mode: vertical-lr;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_right span {
+    display: none;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left {
+  width: 350px;
+  height: 100%;
+  margin-left: 85px;
+  margin-top: 48px;
+  float: left;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_left {
+    width: 100%;
+    height: 10%;
+    margin: 0;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .menu {
+  display: flex;
+  flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .menu {
+    flex-direction: row;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .menu button {
+  border: none;
+  background-color: #003164;
+  color: #3f64a1;
+  font-size: 36px;
+  margin-bottom: 42px;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .menu button {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .menu button {
+    font-size: 24px;
+    margin: 20px 0px 0px 10px;
+  }
+}
+@media screen and (max-width: 600px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .menu button {
+    font-size: 35px;
+    margin: 10px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .menu span {
+  margin-left: 10px;
+}
+@media screen and (max-width: 600px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .menu span {
+    display: none;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .menu .topRad {
+  color: #FF4384;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  bottom: 0px;
+  overflow: hidden;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock {
+    width: 300px;
+    height: 300px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle {
+  width: 350px;
+  height: 350px;
+  position: absolute;
+  bottom: -175px;
+  background-color: #FFEDF7;
+  border-radius: 100%;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock .cricle {
+    width: 300px;
+    height: 300px;
+    bottom: -150px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle {
+  width: 96px;
+  height: 96px;
+  background-color: #FF4384;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle {
+    width: 80px;
+    height: 80px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle .cricle_play {
+  width: 80%;
+  height: 80%;
+  background-color: #FF4384;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle .cricle_play .fas.fa-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  font-size: 30px;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle .cricle_stop {
+  width: 80%;
+  height: 80%;
+  background-color: #FFFFFF;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .small_cilcle .cricle_stop .fas.fa-stop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FF4384;
+  font-size: 30px;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle {
+  width: 96px;
+  height: 96px;
+  background-color: #00A7FF;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: absolute;
+  left: 50%;
+  top: -40px;
+  transform: translateX(-50%);
+  display: none;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle {
+    width: 80px;
+    height: 80px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle .rest_cricle_play {
+  width: 80%;
+  height: 80%;
+  background-color: #00A7FF;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle .rest_cricle_play .fas.fa-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #FFFFFF;
+  font-size: 30px;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle .rest_cricle_stop {
+  width: 80%;
+  height: 80%;
+  background-color: #FFFFFF;
+  border: 5px solid #003164;
+  border-radius: 100%;
+  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .rest_small_cilcle .rest_cricle_stop .fas.fa-stop {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #003164;
+  font-size: 30px;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .cricle_text {
+  position: absolute;
+  top: 60px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .cricle_text {
+    top: 50px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .cricle_text span {
+  font-size: 64px;
+  color: #FF4384;
+}
+.container .Pagination_container .Pagination_box .Pagination_left .clock .cricle .cricle_text p {
+  width: 350px;
+  margin: 0;
+  color: #003164;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle {
+    width: 100%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container {
+  width: 445px;
+  padding-top: 48px;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container {
+    width: 95%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todolist_input {
+  position: relative;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todolist_input input {
+  width: 429px;
+  height: 56px;
+  padding-left: 16px;
+  border: none;
+  margin-bottom: 48px;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todolist_input input {
+    width: 95%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todolist_input ::-webkit-input-placeholder {
+  color: #FF4384;
+  font-size: 16px;
+  font-style: italic;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todolist_input button {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 28px;
+  transform: translateY(-50%);
+  right: 16px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #FF4384;
+  font-size: 24px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todo_box .todo_tittle {
+  width: 413px;
+  height: 28px;
+  font-size: 24px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #3f64a1;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todo_box .todo_tittle {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todo_box .todo_text {
+  height: 32px;
+  margin: 9px 0px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  position: relative;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todo_box .todo_text .todo_text_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-right: 4px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .todo_box .todo_text button {
+  position: absolute;
+  right: 0;
+  color: #FFFFFF;
+  border: none;
+  background-color: #003164;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_title {
+  width: 413px;
+  height: 28px;
+  font-size: 24px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #3f64a1;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_title {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text {
+  height: 32px;
+  margin: 9px 0px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #999;
+  position: relative;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text .done_text_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text .done_text_circle:before {
+  content: "✓";
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text span {
+  position: relative;
+  font-style: italic;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text span hr {
+  width: 100%;
+  position: absolute;
+  top: 0%;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .todolist_container .done_box .done_text .time_cirle {
+  position: absolute;
+  right: 10px;
+  font-size: 30px;
+  display: flex;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container {
+  width: 445px;
+  padding-top: 48px;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container {
+    width: 95%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_title {
+  width: 413px;
+  height: 28px;
+  font-size: 24px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #3f64a1;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_title {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body {
+  width: 100%;
+  height: 100px;
+  margin-top: 16px;
+  display: flex;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_left {
+  flex: 5;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_left .left_time {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_left .left_text {
+  color: #FF4384;
+  font-size: 64px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_left span {
+  color: #3f64a1;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_right {
+  flex: 5;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_right .right_time {
+  color: #FFFFFF;
+  font-size: 16px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_right .right_text {
+  color: #FF4384;
+  font-size: 64px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .focustime_box .focustime_body .focustime_right span {
+  color: #3f64a1;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_title {
+  width: 413px;
+  height: 28px;
+  font-size: 24px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #3f64a1;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_title {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container {
+  margin-top: 20px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box {
+  display: flex;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bar_num {
+  width: 24px;
+  height: 243px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #FFFFFF;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bar_num span {
+  margin-bottom: 20px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars {
+  width: 420px;
+  height: 243px;
+  border-left: 1px solid #FFFFFF;
+  border-bottom: 1px solid #FFFFFF;
+  position: relative;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day1, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day2, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+  width: 30px;
+  margin-left: 20px;
+  background-color: #FFFFFF;
+  position: absolute;
+  bottom: 0;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day1, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day2, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+    width: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day1, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day2, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6, .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+    margin-left: 10px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day2 {
+  height: 80px;
+  left: 60px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day2 {
+    left: 40px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3 {
+  height: 120px;
+  left: 115px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3 {
+    left: 100px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day3 {
+    left: 80px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4 {
+  height: 160px;
+  left: 175px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4 {
+    left: 150px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day4 {
+    left: 125px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5 {
+  height: 200px;
+  left: 235px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5 {
+    left: 210px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day5 {
+    left: 170px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6 {
+  height: 240px;
+  left: 295px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6 {
+    left: 265px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day6 {
+    left: 210px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+  left: 355px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+    left: 315px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day7 {
+    left: 250px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_box .chart_bars .day_red {
+  background-color: #FF4384;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date {
+  width: 100%;
+  height: 19px;
+  display: flex;
+  color: #FFFFFF;
+  margin: 10px 0px 0px 15px;
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date {
+    margin: 10px 0px 0px 10px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date span {
+  margin-left: 18px;
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date span {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date span {
+    margin-left: 10px;
+  }
+}
+@media screen and (max-width: 375px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .analytics_container .chart_box .chart_bars_container .chart_bar_date span {
+    font-size: 12px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container {
+  width: 445px;
+  padding-top: 48px;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container {
+    width: 400px;
+  }
+}
+@media screen and (max-width: 767px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container {
+    padding-top: 0;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container {
+    width: 95%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_title {
+  width: 413px;
+  height: 28px;
+  font-size: 24px;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  background-color: #3f64a1;
+  color: #FFFFFF;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_title, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_title {
+    width: 90%;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body {
+  display: flex;
+  flex-wrap: wrap;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box {
+  width: 148px;
+  margin: 10px 0px;
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+@media screen and (max-width: 980px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box {
+    width: 118px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box {
+    width: 30%;
+    font-size: 12px;
+  }
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label {
+  display: flex;
+  align-items: center;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .work_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .break_ring_circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #FFFFFF;
+  margin-right: 4px;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .work_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .break_ring_circle:after {
+  content: " ";
+  width: 14px;
+  height: 14px;
+  background-color: #FFFFFF;
+  border-radius: 100%;
+  color: transparent;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label input[type="radio"]:checked + .break_ring_circle:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label input[type="radio"]:checked + .work_ring_circle:after,
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label input[type="radio"]:checked + .break_ring_circle:after {
+  color: #FFFFFF;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label span, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label span {
+  color: #FFFFFF;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .rign_red, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .rign_red {
+  border: 2px solid #FF4384;
+}
+.container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .work_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .work_body .break_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .work_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .work_box .break_body .break_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .work_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .work_body .break_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .work_ring_box label .rign_red:after, .container .Pagination_container .Pagination_box .Pagination_middle .ringtones_container .break_box .break_body .break_ring_box label .rign_red:after {
+  background-color: #FF4384;
+}

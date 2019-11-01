@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Vue.js-shopping list</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./style.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css'>
+  <link rel='stylesheet' href='https://use.fontawesome.com/releases/v5.11.2/css/all.css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;display=swap">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+<div class="container">
+  <div class="main">
+    <div class="body">
+      <div class="todo_input_container">
+        <div class="todo_input">
+          <input type="text" placeholder="ADD A NEW MISSION..." v-model="newTodo" @keyup.enter="addTodo"/>
+          <button @click="addTodo">+</button>
+        </div>
+      </div>
+      <div class="todolist_focus">
+        <label for="focusTodo" v-for="todolist in todolists" v-if="todolist.check == true">
+          <input type="radio" id="focusTodo" name="todolist" :checked="todolist.check"/>
+          <div class="todolist_focusLeft"></div>
+          <div class="todolist_focusRight">
+            <div class="focusRight_top"><span>{{todolist.name}}</span></div>
+            <div class="focusRight_bottom"><span v-for="circle in todolist.timer"> ●</span></div>
+          </div>
+        </label>
+      </div>
+      <div class="timer"><span class="workspan" v-if="condition == 'work'" v-model="displayTime">{{displayTime}}</span><span class="restspan" v-if="condition == 'rest'" v-model="restTime">{{restTime}}</span>
+        <button class="completebtn" @click="complete">complete</button>
+      </div>
+      <div class="main_todo">
+        <div class="todolist">
+          <div class="todolist_text" v-for="(todolist,id) in todolists" v-if="todolist.check == false &amp;&amp; todolist.complete == false" v-bind:data-num="id">
+            <label>       
+              <div class="todolist_text_circle"></div><span>{{todolist.name}}</span>
+              <button class="material-icons" @click="changetodo(id)">play_circle_outline</button>
+            </label>
+          </div>
+        </div>
+        <div class="todolist_btn">
+          <button id="more" @click="$('.Pagination_container').show();visibility='todolist'">MORE</button>
+        </div>
+      </div>
+    </div>
+    <div class="nav">
+      <div class="menu">
+        <button class="material-icons" @click="$('.Pagination_container').show();visibility='todolist'">list</button>
+        <button class="material-icons" @click="$('.Pagination_container').show();visibility='analytics'"> assessment</button>
+        <button class="material-icons" @click="$('.Pagination_container').show();visibility='ringtones'"> library_music</button>
+        <div class="pomodoro_title">POMODORO</div>
+      </div>
+    </div>
+    <div class="paly_container">
+      <div class="paly_box">
+        <button id="playbtn" @click="get">
+          <div class="start"></div>
+        </button>
+        <button id="stopbtn" @click="workStop"> 
+          <div class="fas fa-stop"></div>
+        </button>
+      </div>
+      <div class="rest_box">
+        <button id="rest_playbtn" @click="restClock">
+          <div class="start"></div>
+        </button>
+        <button id="rest_stopbtn" @click="restStop">
+          <div class="fas fa-stop"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="Pagination_container">
+    <div class="Pagination_box">
+      <div class="Pagination_left">
+        <div class="menu">
+          <button class="material-icons" :class="{'topRad': visibility=='todolist'}" @click="visibility='todolist'">list<span>to-do list</span></button>
+          <button class="material-icons" :class="{'topRad': visibility=='analytics'}" @click="visibility='analytics'">assessment<span>analytics</span></button>
+          <button class="material-icons" :class="{'topRad': visibility=='ringtones'}" @click="visibility='ringtones'">library_music<span>ringtones</span></button>
+        </div>
+        <div class="clock">
+          <div class="cricle">
+            <div class="small_cilcle">
+              <div class="cricle_play" @click="get">
+                <div class="fas fa-play"></div>
+              </div>
+              <div class="cricle_stop" @click="workStop">
+                <div class="fas fa-stop"></div>
+              </div>
+            </div>
+            <div class="rest_small_cilcle">
+              <div class="rest_cricle_play" @click="restClock">
+                <div class="fas fa-play"></div>
+              </div>
+              <div class="rest_cricle_stop" @click="restStop">
+                <div class="fas fa-stop"></div>
+              </div>
+            </div>
+            <div class="cricle_text"><span class="showspan" v-if="condition == 'work'" v-model="displayTime">{{displayTime}}</span><span class="showspan" v-if="condition == 'rest'" v-model="restTime">{{restTime}}</span>
+              <p for="focusTodo" v-for="todolist in todolists" v-if="todolist.check == true">{{todolist.name}}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Pagination_middle">
+        <div class="todolist_container" v-if="visibility=='todolist'">
+          <div class="todolist_input">
+            <input type="text" placeholder="ADD A NEW MISSION..." v-model="newTodo" @keyup.enter="addTodo"/>
+            <button @click="addTodo">+</button>
+          </div>
+          <div class="todo_box">
+            <div class="todo_tittle">TO-DO</div>
+            <div class="todo_text" v-for="(todolist,id) in todolists" v-if="todolist.complete == false">
+              <div class="todo_text_circle"></div><span>{{todolist.name}}</span>
+              <button class="material-icons" @click="changetodo(id)">play_circle_outline</button>
+            </div>
+          </div>
+          <div class="done_box">
+            <div class="done_title">DONE</div>
+            <div class="done_text" v-for="(todolist,id) in todolists" v-if="todolist.complete == true">
+              <div class="done_text_circle"></div><span>{{todolist.name}}
+                <hr/></span>
+              <div class="time_cirle">
+                <div v-for="time_cirel in todolist.timer">●</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="analytics_container" v-if="visibility=='analytics'">
+          <div class="focustime_box">
+            <div class="focustime_title">FOCUS TIME</div>
+            <div class="focustime_body">
+              <div class="focustime_left">
+                <div class="left_time">TODAY</div><span class="left_text">{{day1[1].tomoto}}</span><span>/TOMOTO</span>
+              </div>
+              <div class="focustime_right">
+                <div class="right_time">WEEK</div><span class="right_text" v-model="tomoto_total">{{tomoto_total}}</span><span>/TOMOTO</span>
+              </div>
+            </div>
+            <div class="chart_box">
+              <div class="chart_title">CHART</div>
+              <div class="chart_bars_container">
+                <div class="chart_bar_box">
+                  <div class="chart_bar_num"><span>24</span><span>20</span><span>16</span><span>12</span><span>8</span><span>4</span></div>
+                  <div class="chart_bars">
+                    <div class="day1" v-bind:style="{height: day7[1].tomoto*10 + 'px' }"></div>
+                    <div class="day2" v-bind:style="{height: day6[1].tomoto*10 + 'px' }"></div>
+                    <div class="day3" v-bind:style="{height: day5[1].tomoto*10 + 'px' }"></div>
+                    <div class="day4" v-bind:style="{height: day4[1].tomoto*10 + 'px' }"></div>
+                    <div class="day5" v-bind:style="{height: day3[1].tomoto*10 + 'px' }"></div>
+                    <div class="day6" v-bind:style="{height: day2[1].tomoto*10 + 'px' }"></div>
+                    <div class="day7 day_red" v-bind:style="{height: day1[1].tomoto*10 + 'px' }"></div>
+                  </div>
+                </div>
+                <div class="chart_bar_date"><span>{{day7.date}}</span><span>{{day6.date}}</span><span>{{day5.date}}</span><span>{{day4.date}}</span><span>{{day3.date}}</span><span>{{day2.date}}</span><span>{{day1.date}}</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="ringtones_container" v-if="visibility=='ringtones'">
+          <div class="work_box">
+            <div class="work_title">work</div>
+            <div class="work_body">
+              <div class="work_ring_box" v-for="(work_ring,id) in work_rings">
+                <label :for="work_ring.name" @change="work_ringcheck(id)">       
+                  <input type="radio" :id="work_ring.name" name="work_ring" :checked="work_ring.select"/>
+                  <div class="work_ring_circle" :class="{'rign_red':work_ring.select==true}"></div><span>{{work_ring.name}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <div class="break_box">
+            <div class="break_title">BREAK</div>
+            <div class="break_body">
+              <div class="break_ring_box" v-for=" (break_ring,id) in break_rings">
+                <label :for="break_ring.name+'break'" @change="break_ringcheck(id)">       
+                  <input type="radio" :id="break_ring.name+'break'" name="break_ring" :checked="break_ring.select "/>
+                  <div class="break_ring_circle" v-model="break_ring.select" :class="{'rign_red':break_ring.select==true}"></div><span>{{break_ring.name}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Pagination_right">
+        <div class="fas fa-times" @click="$('.Pagination_container').hide()"></div><span>POMODORO</span>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.10/vue.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>
