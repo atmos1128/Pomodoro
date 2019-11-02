@@ -45,6 +45,8 @@ button {
   width: 35%;
   height: 100%;
   background-color: #003164;
+  display: flex ;
+  justify-content: flex-end;
 }
 @media screen and (max-width: 980px) {
   .container .main .nav {
@@ -56,12 +58,13 @@ button {
     width: 100%;
     height: 6%;
     position: absolute;
+    left: 0px;
   }
 }
 .container .main .nav .menu {
   width: 36px;
   height: 100%;
-  float: right;
+  /* float: right; */
   margin-right: 85px;
   color: #FFFFFF;
 }
