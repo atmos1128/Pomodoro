@@ -32,6 +32,7 @@ button {
 .container {
   max-width: 1280px;
   width: 100%;
+  padding: 0px;
   margin: auto;
   background-color: #FFEDF7;
   position: relative;
